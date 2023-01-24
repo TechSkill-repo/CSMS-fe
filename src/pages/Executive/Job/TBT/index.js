@@ -25,7 +25,7 @@ import Pricing from "layouts/ecommerce/products/new-product/components/Pricing";
 import Misc from "./components/Misc";
 
 function getSteps() {
-  return ["1. TBT", "2. View", "3. Misc Details"];
+  return ["1. TBT", "2. Page 2", "3. Page 3", "4. Pricing"];
 }
 
 function getStepContent(stepIndex) {
@@ -56,13 +56,6 @@ function NewProduct() {
       <MDBox mt={0} mb={9}>
         <Grid container justifyContent="center">
           <Grid item xs={12} lg={8}>
-            <MDBox mt={0} mb={8} textAlign="center">
-              <MDBox mb={1}>
-                <MDTypography variant="h5" fontWeight="bold">
-                  Tool-Box Talk
-                </MDTypography>
-              </MDBox>
-            </MDBox>
             <Card>
               <MDBox mt={-3} mb={3} mx={2}>
                 <Stepper activeStep={activeStep} alternativeLabel>
