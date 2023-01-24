@@ -29,7 +29,6 @@ import MDInput from "components/MDInput";
 // import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 // NewProduct page components
-import FormField from "layouts/ecommerce/products/new-product/components/FormField";
 import {
   Box,
   FormControl,
@@ -38,6 +37,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
+import MDButton from "components/MDButton";
 
 function ToolBoxTalk() {
   const [editorValue, setEditorValue] = useState(
@@ -55,9 +55,9 @@ function ToolBoxTalk() {
           gap: "1rem",
         }}
       >
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <FormField type="text" label="Date" />
+            <TextField variant="standard" fullWidth label="Date" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl
@@ -96,7 +96,7 @@ function ToolBoxTalk() {
             </FormControl>
           </Grid>
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
             <FormControl
               variant="standard"
@@ -134,13 +134,21 @@ function ToolBoxTalk() {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormField type="text" label="Safety Representative" />
+            <TextField
+              variant="standard"
+              fullWidth
+              label="Safety Representative"
+            />
           </Grid>
         </Grid>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <FormField type="text" label="Company Supervisor/Line Manager" />
+            <TextField
+              variant="standard"
+              fullWidth
+              label="Company Supervisor/Line Manager"
+            />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl
@@ -183,9 +191,13 @@ function ToolBoxTalk() {
         </Grid>
       </MDBox>
       <MDBox mt={2}>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <FormField type="text" label="Contractor Employees" />
+            <TextField
+              variant="standard"
+              fullWidth
+              label="Contractor Employees"
+            />
           </Grid>
         </Grid>
       </MDBox>
@@ -194,9 +206,14 @@ function ToolBoxTalk() {
         <MDTypography variant={"h6"}>
           1.) Safety Contract review of action items from last meetings.
         </MDTypography>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={12}>
-            <TextField variant="outlined" label="Any Discussions" fullWidth />
+            <TextField
+              variant="standard"
+              fullWidth
+              label="Any Discussions"
+              multiline={true}
+            />
           </Grid>
         </Grid>
       </MDBox>
@@ -205,12 +222,27 @@ function ToolBoxTalk() {
         <MDTypography variant={"h6"}>
           2.) Items of General Safety Importance to the total work site.
         </MDTypography>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={12}>
-            <TextField variant="outlined" label="Any Discussions" fullWidth />
+            <TextField
+              variant="standard"
+              fullWidth
+              label="Any Discussions"
+              multiline={true}
+            />
           </Grid>
         </Grid>
       </MDBox>
+
+      <MDButton
+        color="info"
+        variant="gradient"
+        sx={{
+          margin: "1rem 0",
+        }}
+      >
+        View Report
+      </MDButton>
     </MDBox>
   );
 }

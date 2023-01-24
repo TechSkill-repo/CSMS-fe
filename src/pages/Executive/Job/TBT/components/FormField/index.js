@@ -19,8 +19,8 @@ import PropTypes from "prop-types";
 // Material Dashboard 2 PRO React components
 import MDInput from "components/MDInput";
 
-function FormField({ label, ...rest }) {
-  return <MDInput {...rest} label={label} variant="standard" fullWidth />;
+function FormField({ label, variant = "standard", ...rest }) {
+  return <MDInput {...rest} label={label} variant={variant} fullWidth />;
 }
 
 // typechecking props for FormField

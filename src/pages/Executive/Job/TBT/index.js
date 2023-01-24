@@ -19,12 +19,13 @@ import Footer from "examples/Footer";
 
 // NewProduct page components
 import ToolBoxTalk from "./components/ToolBoxTalk";
-import Media from "layouts/ecommerce/products/new-product/components/Media";
+import ViewPdf from "./components/ViewPdf";
 import Socials from "layouts/ecommerce/products/new-product/components/Socials";
 import Pricing from "layouts/ecommerce/products/new-product/components/Pricing";
+import Misc from "./components/Misc";
 
 function getSteps() {
-  return ["1. TBT", "2. Media", "3. Social", "4. Pricing"];
+  return ["1. TBT", "2. View", "3. Misc Details"];
 }
 
 function getStepContent(stepIndex) {
@@ -32,11 +33,10 @@ function getStepContent(stepIndex) {
     case 0:
       return <ToolBoxTalk />;
     case 1:
-      return <Media />;
+      return <ViewPdf />;
     case 2:
-      return <Socials />;
-    case 3:
-      return <Pricing />;
+      return <Misc />;
+
     default:
       return null;
   }
@@ -53,10 +53,10 @@ function NewProduct() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <MDBox mt={5} mb={9}>
+      <MDBox mt={0} mb={9}>
         <Grid container justifyContent="center">
           <Grid item xs={12} lg={8}>
-            <MDBox mt={6} mb={8} textAlign="center">
+            <MDBox mt={0} mb={8} textAlign="center">
               <MDBox mb={1}>
                 <MDTypography variant="h5" fontWeight="bold">
                   Tool-Box Talk
@@ -98,7 +98,7 @@ function NewProduct() {
                       color="dark"
                       onClick={!isLastStep ? handleNext : undefined}
                     >
-                      {isLastStep ? "send" : "next"}
+                      {isLastStep ? "review & submit" : "next"}
                     </MDButton>
                   </MDBox>
                 </MDBox>
