@@ -111,6 +111,25 @@ const routes = [
     key: "TBT - Form",
     icon: <Icon fontSize="medium">apps</Icon>,
   },
+
+  {
+    noCollapse: true,
+    route: "/ppe-checklist",
+    type: "collapse",
+    component: <EmployeeEntry></EmployeeEntry>,
+    name: "PPE Checklist",
+    key: "PPE Checklist",
+    icon: <Icon fontSize="medium">health_and_safety</Icon>,
+  },
+  {
+    noCollapse: true,
+    route: "/tools-and-tackles",
+    type: "collapse",
+    component: <EmployeeEntry></EmployeeEntry>,
+    name: "Tools & Tackles",
+    key: "Tools & Tackles",
+    icon: <Icon fontSize="medium">construction</Icon>,
+  },
   {
     route: "/tbt-form-fillup",
 
