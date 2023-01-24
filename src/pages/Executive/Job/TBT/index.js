@@ -25,7 +25,7 @@ import Pricing from "layouts/ecommerce/products/new-product/components/Pricing";
 import Misc from "./components/Misc";
 
 function getSteps() {
-  return ["1. TBT", "2. Page 2", "3. Page 3", "4. Pricing"];
+  return ["1. 1", "2. 2", "3. 3", "4. 4"];
 }
 
 function getStepContent(stepIndex) {
@@ -53,7 +53,7 @@ function NewProduct() {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <MDBox mt={0} mb={9}>
+      <MDBox mt={5} mb={9}>
         <Grid container justifyContent="center">
           <Grid item xs={12} lg={8}>
             <Card>

@@ -29,6 +29,7 @@ import MDInput from "components/MDInput";
 // import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 // NewProduct page components
+import FormField from "layouts/ecommerce/products/new-product/components/FormField";
 import {
   Box,
   FormControl,
@@ -37,7 +38,6 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import MDButton from "components/MDButton";
 
 const activePoints = [
   {
@@ -66,28 +66,24 @@ function ToolBoxTalk() {
           gap: "1rem",
         }}
       >
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <TextField variant="standard" fullWidth label="Date" />
+            <FormField type="text" label="Date" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField type="text" label="Location" />
           </Grid>
         </Grid>
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField type="text" label="Company Supervisor/Line Manager" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField
-              variant="standard"
-              fullWidth
-              label="Safety Representative"
-            />
+            <FormField type="text" label="Safety Representative" />
           </Grid>
         </Grid>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField type="text" label="Department" />
           </Grid>
@@ -132,13 +128,9 @@ function ToolBoxTalk() {
         </Grid>
       </MDBox>
       <MDBox mt={2}>
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <TextField
-              variant="standard"
-              fullWidth
-              label="Contractor Employees"
-            />
+            <FormField type="text" label="Contractor Employees" />
           </Grid>
         </Grid>
       </MDBox>
@@ -156,18 +148,23 @@ function ToolBoxTalk() {
                 fontWeight="regular"
                 textGradient
               >
+                <spna
+                  style={{
+                    fontWeight: "900",
+                    fontSize: "20px",
+                    alignItems: "center",
+                  }}
+                >
+                  *
+                </spna>{" "}
                 {activePoint.point}
               </MDTypography>
             </MDBox>
           );
         })}
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={12}>
-            <TextField
-              variant="standard"
-              fullWidth
-              label="Any Discussions"
-              multiline={true}
-            />
+            <TextField variant="outlined" label="Any Discussions" fullWidth />
           </Grid>
         </Grid>
       </MDBox>
@@ -183,26 +180,12 @@ function ToolBoxTalk() {
             injury yo company or Contract personnel{" "}
           </MDTypography>
         </MDBox>
+        <Grid container spacing={3}>
           <Grid item xs={12} sm={12}>
-            <TextField
-              variant="standard"
-              fullWidth
-              label="Any Discussions"
-              multiline={true}
-            />
+            <TextField variant="outlined" label="Any Discussions" fullWidth />
           </Grid>
         </Grid>
       </MDBox>
-
-      <MDButton
-        color="info"
-        variant="gradient"
-        sx={{
-          margin: "1rem 0",
-        }}
-      >
-        View Report
-      </MDButton>
     </MDBox>
   );
 }

@@ -1,4 +1,4 @@
-import { Button, Card, Grid, TextField, Typography } from "@mui/material";
+import { Button, Card, Grid, Icon, TextField, Typography } from "@mui/material";
 import MDBox from "components/MDBox";
 import MDButton from "components/MDButton";
 import MDTypography from "components/MDTypography";
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 function Form() {
   const [timeBox, setTimeBox] = useState(false);
+  const [workOrder, setWorkOrder] = useState("");
   return (
     <Grid
       style={{
@@ -35,6 +36,8 @@ function Form() {
             label="Enter Work Permit Number"
             variant="outlined"
             fullWidth
+            value={workOrder}
+            onChange={(e) => setWorkOrder(e.target.value)}
           />
         </MDBox>
       </MDBox>
@@ -47,7 +50,7 @@ function Form() {
       >
         Please ask for grace time, with reason specified.{" "}
         <span
-          style={{ fontWeight: "800", color: "#e91e63" }}
+          style={{ fontWeight: "800", color: "#e91e63", cursor: "pointer" }}
           onClick={() => setTimeBox(!timeBox)}
         >
           Click here
@@ -62,10 +65,6 @@ function Form() {
               label="Reason for Grace Time"
               variant="outlined"
               fullWidth
-              // value={search}
-              // onChange={(e) => setSearch(e.target.value)}
-              // helperText={error}
-              // error={error ? true : false}
             />
             <Button
               variant="gradient"
@@ -95,8 +94,12 @@ function Form() {
       )}
       <Link to="/tbt-form-fillup">
         <MDBox mt={3}>
-          <MDButton variant="gradient" color="dark">
-            Submit
+          <MDButton
+            disabled={workOrder.length < 5}
+            variant="gradient"
+            color="dark"
+          >
+            <Icon>done</Icon>&nbsp; Next
           </MDButton>
         </MDBox>
       </Link>

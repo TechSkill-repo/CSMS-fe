@@ -15,9 +15,16 @@ function ViewPdf() {
       }}
     >
       <MDTypography variant="h5">
-        Items of Safety Interest to this Group.
+        3.) Items of Safety Interest to this Group.
       </MDTypography>
 
+      <MDBox mt={3}>
+        <MDTypography variant="subtitle2">
+          Red Strips, Orange Strips, Green Strips, Safety-alert tips for Satefy
+          communications, hazards or Safety conditions applicable to this
+          group's work area
+        </MDTypography>
+      </MDBox>
       <MDBox
         sx={{
           padding: "1rem",
@@ -25,10 +32,10 @@ function ViewPdf() {
       >
         <img
           src={
-            "https://images.unsplash.com/photo-1526925539332-aa3b66e35444?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGNvZGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            "https://imgv2-2-f.scribdassets.com/img/document/517513004/original/20eb5956b0/1672853050?v=1"
           }
           alt="loader"
-          style={{ width: "500px", height: "500px" }}
+          style={{ width: "260px", height: "100%" }}
         />
       </MDBox>
       <MDTypography

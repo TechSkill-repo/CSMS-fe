@@ -26,6 +26,25 @@ function Misc() {
           gap: "1rem",
         }}
       >
+        <Grid item xs={12}>
+          <MDTypography
+            variant="h6"
+            fontSize={15}
+            sx={{
+              margin: "10px 0",
+            }}
+          >
+            4. Standard Operating Procedures (SOP) relative to the group
+          </MDTypography>
+          <TextField
+            fullWidth
+            variant="outlined"
+            placeholder="Message"
+            multiline={true}
+            rows={2}
+          ></TextField>
+        </Grid>
+
         <Grid item xs={12} sm={12}>
           <MDTypography
             variant="h6"
@@ -54,7 +73,7 @@ function Misc() {
                     required
                   >
                     <InputLabel id="demo-simple-select-label">
-                      Employees
+                      Responsibilities
                     </InputLabel>
                     <Select
                       labelId="demo-simple-select-label"
@@ -76,10 +95,13 @@ function Misc() {
                       }}
                     >
                       <MenuItem key={1} value={"Coke"}>
-                        Coke Plant
+                        PPE
                       </MenuItem>
                       <MenuItem key={2} value={"Rmm"}>
-                        Rmm
+                        HouseKeeping
+                      </MenuItem>
+                      <MenuItem key={2} value={"Rmm"}>
+                        Tools and tackles
                       </MenuItem>
                     </Select>
                   </FormControl>
@@ -154,18 +176,6 @@ function Misc() {
             multiline={true}
             rows={2}
           ></TextField>
-        </Grid>
-
-        <Grid item>
-          <MDTypography
-            variant="h6"
-            fontSize={15}
-            sx={{
-              margin: "10px 0",
-            }}
-          >
-            7. Feedback suggestions and grievances request.
-          </MDTypography>
         </Grid>
       </Grid>
     </MDBox>

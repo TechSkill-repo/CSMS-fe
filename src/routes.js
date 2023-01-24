@@ -80,7 +80,7 @@ import EmployeeEntry from "pages/Executive/Job/EmployeeEntry";
 const routes = [
   {
     type: "collapse",
-    name: "Safety Executive",
+    name: "Supervisor",
     key: "brooklyn-alice",
     icon: <MDAvatar src={profilePicture} alt="Brooklyn Alice" size="sm" />,
     collapse: [
