@@ -39,6 +39,17 @@ import {
   TextField,
 } from "@mui/material";
 
+const activePoints = [
+  {
+    point:
+      "We are worried about different products in different joined components",
+  },
+  {
+    point:
+      "We are worried about different products in different joined components",
+  },
+];
+
 function ToolBoxTalk() {
   const [editorValue, setEditorValue] = useState(
     "<p>Some initial <strong>bold</strong> text</p><br><br><br><br>"
@@ -60,78 +71,12 @@ function ToolBoxTalk() {
             <FormField type="text" label="Date" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <FormControl
-              variant="standard"
-              fullWidth
-              sx={{ textAlign: "left" }}
-              required
-            >
-              <InputLabel id="demo-simple-select-label">Location</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Location"
-                // onChange={handleInput}
-                name="location"
-                py={2}
-                SelectDisplayProps={{
-                  style: {
-                    paddingTop: "8px",
-                    paddingBottom: "8px",
-                    paddingLeft: 0,
-                  },
-                }}
-                sx={{
-                  height: "30px",
-                  //  textAlign:"left"
-                }}
-              >
-                <MenuItem key={1} value={"Coke"}>
-                  Coke Plant
-                </MenuItem>
-                <MenuItem key={2} value={"Rmm"}>
-                  Rmm
-                </MenuItem>
-              </Select>
-            </FormControl>
+            <FormField type="text" label="Location" />
           </Grid>
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <FormControl
-              variant="standard"
-              fullWidth
-              sx={{ textAlign: "left" }}
-              required
-            >
-              <InputLabel id="demo-simple-select-label">Department</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Location"
-                // onChange={handleInput}
-                name="location"
-                py={2}
-                SelectDisplayProps={{
-                  style: {
-                    paddingTop: "8px",
-                    paddingBottom: "8px",
-                    paddingLeft: 0,
-                  },
-                }}
-                sx={{
-                  height: "30px",
-                  //  textAlign:"left"
-                }}
-              >
-                <MenuItem key={1} value={"Coke"}>
-                  Coke Plant
-                </MenuItem>
-                <MenuItem key={2} value={"Rmm"}>
-                  Rmm
-                </MenuItem>
-              </Select>
-            </FormControl>
+            <FormField type="text" label="Company Supervisor/Line Manager" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField type="text" label="Safety Representative" />
@@ -140,7 +85,7 @@ function ToolBoxTalk() {
 
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <FormField type="text" label="Company Supervisor/Line Manager" />
+            <FormField type="text" label="Department" />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl
@@ -172,10 +117,10 @@ function ToolBoxTalk() {
                 }}
               >
                 <MenuItem key={1} value={"Coke"}>
-                  Coke Plant
+                  Name 1
                 </MenuItem>
                 <MenuItem key={2} value={"Rmm"}>
-                  Rmm
+                  Name 2
                 </MenuItem>
               </Select>
             </FormControl>
@@ -194,6 +139,20 @@ function ToolBoxTalk() {
         <MDTypography variant={"h6"}>
           1.) Safety Contract review of action items from last meetings.
         </MDTypography>
+        {activePoints.map((activePoint) => {
+          return (
+            <MDBox mt={1} mb={1}>
+              <MDTypography
+                variant="button"
+                color="success"
+                fontWeight="regular"
+                textGradient
+              >
+                {activePoint.point}
+              </MDTypography>
+            </MDBox>
+          );
+        })}
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12}>
             <TextField variant="outlined" label="Any Discussions" fullWidth />
@@ -205,6 +164,13 @@ function ToolBoxTalk() {
         <MDTypography variant={"h6"}>
           2.) Items of General Safety Importance to the total work site.
         </MDTypography>
+        <MDBox my={2}>
+          <MDTypography variant="caption" textGradient color="info">
+            Ask employee to mention any Incident/near miss duration that past
+            day which may have or have resulted into damage to property or
+            injury yo company or Contract personnel{" "}
+          </MDTypography>
+        </MDBox>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={12}>
             <TextField variant="outlined" label="Any Discussions" fullWidth />

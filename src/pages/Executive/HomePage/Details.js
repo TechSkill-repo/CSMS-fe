@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import MDTypography from "components/MDTypography";
 import React from "react";
 
 function Details() {
@@ -17,19 +18,24 @@ function Details() {
       <Grid
         container
         flexDirection={"column"}
-        gap="5px"
+        gap="1px"
         style={{ paddingTop: "1rem" }}
       >
         {details.map((detail) => (
-          <Grid item>
-            <Typography
-              variant="subtitle1"
-              fontSize={14}
-              color={"gray"}
-              fontWeight={"regular"}
+          <Grid item display="flex">
+            <MDTypography variant="h6" color="dark" fontSize={16} mb={2}>
+              {detail.name}:{" "}
+            </MDTypography>
+            <MDTypography
+              variant="body1"
+              color="secondary"
+              ml={2}
+              fontSize={16}
+              mb={2}
             >
-              {detail.name}: {detail.value}
-            </Typography>
+              {" "}
+              {detail.value}
+            </MDTypography>
           </Grid>
         ))}
       </Grid>

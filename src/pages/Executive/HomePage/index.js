@@ -21,6 +21,7 @@ function HomePage() {
           alignItems="center"
           position="relative"
           minHeight="10.75rem"
+          minWeight="100%"
           borderRadius="xl"
           sx={{
             backgroundImage: ({
@@ -78,9 +79,9 @@ function HomePage() {
           >
             <Grid item>
               <MDTypography
-                variant="button"
-                color="text"
-                fontWeight="regular"
+                variant="h6"
+                color="dark"
+                // fontWeight="regular"
                 fontSize={16}
               >
                 Personal Details
@@ -89,9 +90,9 @@ function HomePage() {
             </Grid>
             <Grid item>
               <MDTypography
-                variant="button"
-                color="text"
-                fontWeight="regular"
+                variant="h6"
+                color="dark"
+                // fontWeight="regular"
                 fontSize={16}
               >
                 Company Details
