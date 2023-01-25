@@ -76,6 +76,7 @@ import TBTForm from "pages/Executive/Job/TBT";
 // Images
 import profilePicture from "assets/images/team-3.jpg";
 import EmployeeEntry from "pages/Executive/Job/EmployeeEntry";
+import PPE from "pages/Executive/Job/PPE";
 
 const routes = [
   {
@@ -116,7 +117,7 @@ const routes = [
     noCollapse: true,
     route: "/ppe-checklist",
     type: "collapse",
-    component: <EmployeeEntry></EmployeeEntry>,
+    component: <PPE></PPE>,
     name: "PPE Checklist",
     key: "PPE Checklist",
     icon: <Icon fontSize="medium">health_and_safety</Icon>,

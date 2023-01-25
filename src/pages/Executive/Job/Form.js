@@ -3,11 +3,16 @@ import MDBox from "components/MDBox";
 import MDButton from "components/MDButton";
 import MDTypography from "components/MDTypography";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Form() {
   const [timeBox, setTimeBox] = useState(false);
   const [workOrder, setWorkOrder] = useState("");
+
+  const navigate = useNavigate();
+  const handleNext = () => {
+    navigate("/tbt-form-fillup");
+  };
   return (
     <Grid
       style={{
@@ -21,7 +26,14 @@ function Form() {
       width="100%"
     >
       <MDBox>
-        <MDTypography variant="h6">
+        <MDTypography
+          variant="h6"
+          fontSize={{
+            xs: "14px",
+            sm: "14px",
+            md: "18px",
+          }}
+        >
           Please Enter Your Work Permit Number To Get Access of TBT
         </MDTypography>
         <MDBox
@@ -44,9 +56,19 @@ function Form() {
       <MDTypography
         variant="subtitle2"
         color="info"
-        fontSize={14}
+        fontSize={{
+          xs: "14px",
+          sm: "14px",
+          md: "15px",
+        }}
         mt={2}
-        textAlign="left"
+        sx={{
+          textAlign: {
+            xs: "left",
+            sm: "left",
+            md: "center",
+          },
+        }}
       >
         Please ask for grace time, with reason specified.{" "}
         <span
@@ -92,17 +114,26 @@ function Form() {
       ) : (
         ""
       )}
-      <Link to="/tbt-form-fillup">
-        <MDBox mt={3}>
-          <MDButton
-            disabled={workOrder.length < 5}
-            variant="gradient"
-            color="dark"
-          >
-            <Icon>done</Icon>&nbsp; Next
-          </MDButton>
-        </MDBox>
-      </Link>
+      <MDBox
+        mt={3}
+        sx={{
+          display: "flex",
+          justifyContent: {
+            xs: "center",
+            sm: "center",
+            md: "flex-end",
+          },
+        }}
+      >
+        <MDButton
+          disabled={workOrder.length < 5}
+          variant="gradient"
+          color="dark"
+          onClick={handleNext}
+        >
+          <Icon>done</Icon>&nbsp; Next
+        </MDButton>
+      </MDBox>
     </Grid>
   );
 }

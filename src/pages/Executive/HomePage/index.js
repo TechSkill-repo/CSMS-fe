@@ -82,7 +82,7 @@ function HomePage() {
                 variant="h6"
                 color="dark"
                 // fontWeight="regular"
-                fontSize={16}
+                fontSize={17}
               >
                 Personal Details
               </MDTypography>
@@ -93,7 +93,7 @@ function HomePage() {
                 variant="h6"
                 color="dark"
                 // fontWeight="regular"
-                fontSize={16}
+                fontSize={17}
               >
                 Company Details
               </MDTypography>

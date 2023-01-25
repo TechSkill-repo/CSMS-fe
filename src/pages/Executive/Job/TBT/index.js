@@ -25,7 +25,7 @@ import Pricing from "layouts/ecommerce/products/new-product/components/Pricing";
 import Misc from "./components/Misc";
 
 function getSteps() {
-  return ["1. 1", "2. 2", "3. 3", "4. 4"];
+  return ["1", "2", "3", "4"];
 }
 
 function getStepContent(stepIndex) {

@@ -1,29 +1,17 @@
-import { Grid, Typography } from "@mui/material";
+import Box from "@mui/material/Box/Box";
+import Grid from "@mui/material/Grid/Grid";
 import MDTypography from "components/MDTypography";
 import React from "react";
 
-function Details() {
-  const details = [
-    { name: "Name", value: "Richard Davis" },
-    { name: "Email", value: "noname@domain.com" },
-    { name: "Employee Id", value: "123456" },
-    { name: "Employee Designation", value: "Employee" },
-    { name: "Contact", value: "1234567890" },
-    { name: "Address", value: "123, Street, City, State, Country" },
-    { name: "Date of Birth", value: "01/01/1990" },
-  ];
-
+const Details = ({ details }) => {
   return (
-    <>
+    <Box>
       <Grid
         container
         flexDirection={"column"}
         style={{
           paddingTop: "1rem",
-          gap: {
-            xs: "0px",
-            sm: "1px",
-          },
+          gap: "0",
         }}
       >
         {details.map((detail) => (
@@ -36,7 +24,7 @@ function Details() {
                 fontSize: {
                   xs: 14,
                   sm: 14,
-                  md: 16,
+                  md: 14,
                 },
               }}
             >
@@ -50,7 +38,7 @@ function Details() {
                 fontSize: {
                   xs: 14,
                   sm: 14,
-                  md: 16,
+                  md: 14,
                 },
               }}
               mb={2}
@@ -61,8 +49,8 @@ function Details() {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Box>
   );
-}
+};
 
 export default Details;
