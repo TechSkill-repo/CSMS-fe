@@ -19,6 +19,7 @@ import Select from "@mui/material/Select/Select";
 import InputLabel from "@mui/material/InputLabel/InputLabel";
 import FormControl from "@mui/material/FormControl/FormControl";
 import Details from "./Details";
+import { Icon } from "@mui/material";
 
 const PPE = () => {
   const [items, setItems] = useState([1]);
@@ -42,131 +43,94 @@ const PPE = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-
-      <MDTypography
-        variant="h5"
-        sx={{
-          margin: "1rem",
-        }}
-      >
-        Daily PPE Checklist
-      </MDTypography>
-
-      <Box sx={{ display: "flex", alignItems: "flex-end", margin: "1rem 0" }}>
-        <AccountCircle
-          sx={{ color: "action.active", mr: 1, my: 0.5 }}
-          fontSize="medium"
-        />
-        <TextField
-          id="input-with-sx"
-          label="Enter Employee ID"
-          variant="standard"
-          //   value={search}
-          //   onChange={(e) => setSearch(e.target.value)}
-          //   helperText={error}
-          //   error={error ? true : false}
-        />
-        <Button
-          variant="gradient"
-          color="info"
-          //   onClick={searchEmployee}
-          sx={{
-            color: "white",
-            marginLeft: "1rem",
-            border: "1px solid gray",
-            transition: "all 0.1s ease-in-out",
-            "&:hover": {
-              color: "white !important",
-              background: "#232526",
-              background: "-webkit-linear-gradient(to right, #232526, #414345)",
-              background: "linear-gradient(to right, #232526, #414345)",
-            },
-          }}
-        >
-          {/* {loading? <img
-                  src={loader}
-                  style={{ width: "20px", height: "20px" }}
-                ></img>:"Search"} */}
-          Search
-        </Button>
-      </Box>
-
-      <Grid
-        container
-        sx={{
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "5rem",
-        }}
-      >
-        <Grid
-          item
-          sx={{
-            width: {
-              xs: "100%",
-              sm: "100%",
-              md: "50%",
-            },
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            border: "1px solid gray",
-            borderRadius: "10px",
+      <Grid display="flex" justifyContent="space-between">
+        <Card
+          style={{
+            marginTop: "1rem",
             padding: "1rem",
-            flexDirection: "column",
-            gap: "10px",
+            boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
+            width: "50%",
           }}
         >
-          <TextField
-            label="JOB"
-            variant="outlined"
-            fullWidth
-            placeholder="Job"
-          />
-
-          <TextField
-            label="SITE"
-            variant="outlined"
-            fullWidth
-            placeholder="Site"
-          />
-
-          <TextField
-            label="FORM NO."
-            variant="outlined"
-            fullWidth
-            placeholder="Form no."
-          />
-        </Grid>
-        <Grid
-          item
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <MDBox
+          <MDTypography
+            variant="h5"
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-              color: "green",
+              margin: "1rem",
             }}
           >
-            <MDTypography variant="h6" fontSize={"18px"} color="green">
-              All PPE Equipments are in good condition{" "}
+            Daily PPE Checklist
+          </MDTypography>
+          <Grid
+            container
+            sx={{
+              width: "100%",
+              padding: "10px",
+              alignItems: "center",
+              gap: "5rem",
+            }}
+          >
+            <Grid
+              item
+              sx={{
+                width: {
+                  xs: "100%",
+                  sm: "100%",
+                  md: "100%",
+                },
+                display: "flex",
+                justifyContent: "left",
+                alignItems: "center",
+                // border: "1px solid gray",
+                borderRadius: "10px",
+                // padding: "1rem",
+                flexDirection: "column",
+                gap: "10px",
+              }}
+            >
+              <TextField
+                label="JOB"
+                variant="outlined"
+                fullWidth
+                placeholder="Job"
+              />
+
+              <TextField
+                label="SITE"
+                variant="outlined"
+                fullWidth
+                placeholder="Site"
+              />
+
+              <TextField
+                label="FORM NO."
+                variant="outlined"
+                fullWidth
+                placeholder="Form no."
+              />
+            </Grid>
+          </Grid>
+        </Card>
+        <Card
+          style={{
+            marginTop: "1rem",
+            padding: "1rem",
+            boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
+            width: "45%",
+          }}
+        >
+          <MDBox mb={4}>
+            <MDTypography variant="h4" color="primary">
+              PPE Guide Lines
             </MDTypography>
-            <DoneAllIcon fontSize="medium"></DoneAllIcon>
           </MDBox>
-          <MDButton variant="gradient" color="info">
-            ALL GOOD
-          </MDButton>
-        </Grid>
+          <MDTypography variant="subtitle2" color="info">
+            PPE includes shoe cover, gown, mask, eye protection & gloves. Shoe
+            cover should always be worn before entering the patient care area
+            (Isolation ward etc.). If gowns are not fluid resistant, use a
+            waterproof apron for procedures with expected high fluid volumes
+            that might penetrate the gown.
+          </MDTypography>
+        </Card>
       </Grid>
       <Card
         sx={{
@@ -184,7 +148,7 @@ const PPE = () => {
                 margin: "10px 0",
               }}
             >
-              Equipments Damaged Condition
+              Employee PPE conditions
             </MDTypography>
             <Box
               sx={{
@@ -194,6 +158,48 @@ const PPE = () => {
                 gap: "10px",
               }}
             >
+              <Grid item xs={12} md={10}>
+                <FormControl
+                  variant="standard"
+                  fullWidth
+                  sx={{ textAlign: "left" }}
+                  required
+                >
+                  <InputLabel id="demo-simple-select-label">
+                    Employee ID
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Location"
+                    // onChange={handleInput}
+                    name="location"
+                    py={2}
+                    SelectDisplayProps={{
+                      style: {
+                        paddingTop: "8px",
+                        paddingBottom: "8px",
+                        paddingLeft: 0,
+                      },
+                    }}
+                    sx={{
+                      height: "30px",
+                      //  textAlign:"left"
+                    }}
+                  >
+                    <MenuItem key={1} value={"Coke"}>
+                      1234
+                    </MenuItem>
+                    <MenuItem key={2} value={"Rmm"}>
+                      2345432
+                    </MenuItem>
+                    <MenuItem key={2} value={"Rmm"}>
+                      1234
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+
               {items.map((item, index) => {
                 return (
                   <Grid
@@ -233,13 +239,28 @@ const PPE = () => {
                           }}
                         >
                           <MenuItem key={1} value={"Coke"}>
-                            PPE
+                            Safety Shoes
                           </MenuItem>
                           <MenuItem key={2} value={"Rmm"}>
-                            HouseKeeping
+                            Safety Helmet with chain strip
                           </MenuItem>
                           <MenuItem key={2} value={"Rmm"}>
-                            Tools and tackles
+                            Safety Hand gloves
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Safety Goggles
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Safety Jacket
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Safety Dust Mask
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Safety Leg Guard
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Face Shield
                           </MenuItem>
                         </Select>
                       </FormControl>
@@ -275,13 +296,13 @@ const PPE = () => {
                           }}
                         >
                           <MenuItem key={1} value={"Coke"}>
-                            PPE
+                            Good
                           </MenuItem>
                           <MenuItem key={2} value={"Rmm"}>
-                            HouseKeeping
+                            Partially Good
                           </MenuItem>
                           <MenuItem key={2} value={"Rmm"}>
-                            Tools and tackles
+                            Bad
                           </MenuItem>
                         </Select>
                       </FormControl>
@@ -317,8 +338,13 @@ const PPE = () => {
                   </Grid>
                 );
               })}
-              <MDButton variant="gradient" color="info">
-                Submit
+              <MDBox mt={4} mb={2}>
+                <MDButton width="100%" variant="gradient" color="info">
+                  Submit
+                </MDButton>
+              </MDBox>
+              <MDButton width="100%" variant="gradient" color="success">
+                <Icon>done</Icon> &nbsp; Click here to mark all PPE Good
               </MDButton>
             </Box>
           </Grid>
