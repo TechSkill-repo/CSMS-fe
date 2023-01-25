@@ -43,94 +43,102 @@ const PPE = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <Grid display="flex" justifyContent="space-between">
-        <Card
-          style={{
-            marginTop: "1rem",
-            padding: "1rem",
-            boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
-            width: "50%",
-          }}
-        >
-          <MDTypography
-            variant="h5"
-            sx={{
-              margin: "1rem",
+      <Grid display="flex" sx={{ display: "flex", flexDirection: "column" }}>
+        <Grid width="50%" sx={{ width: "100%" }}>
+          <Card
+            style={{
+              marginTop: "1rem",
+              padding: "1rem",
+              boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
             }}
           >
-            Daily PPE Checklist
-          </MDTypography>
-          <Grid
-            container
-            sx={{
-              width: "100%",
-              padding: "10px",
-              alignItems: "center",
-              gap: "5rem",
-            }}
-          >
-            <Grid
-              item
+            <MDTypography
+              variant="h5"
               sx={{
-                width: {
-                  xs: "100%",
-                  sm: "100%",
-                  md: "100%",
-                },
-                display: "flex",
-                justifyContent: "left",
-                alignItems: "center",
-                // border: "1px solid gray",
-                borderRadius: "10px",
-                // padding: "1rem",
-                flexDirection: "column",
-                gap: "10px",
+                margin: "1rem",
               }}
             >
-              <TextField
-                label="JOB"
-                variant="outlined"
-                fullWidth
-                placeholder="Job"
-              />
-
-              <TextField
-                label="SITE"
-                variant="outlined"
-                fullWidth
-                placeholder="Site"
-              />
-
-              <TextField
-                label="FORM NO."
-                variant="outlined"
-                fullWidth
-                placeholder="Form no."
-              />
-            </Grid>
-          </Grid>
-        </Card>
-        <Card
-          style={{
-            marginTop: "1rem",
-            padding: "1rem",
-            boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
-            width: "45%",
-          }}
-        >
-          <MDBox mb={4}>
-            <MDTypography variant="h4" color="primary">
-              PPE Guide Lines
+              Daily PPE's Checklist
             </MDTypography>
-          </MDBox>
-          <MDTypography variant="subtitle2" color="info">
-            PPE includes shoe cover, gown, mask, eye protection & gloves. Shoe
-            cover should always be worn before entering the patient care area
-            (Isolation ward etc.). If gowns are not fluid resistant, use a
-            waterproof apron for procedures with expected high fluid volumes
-            that might penetrate the gown.
-          </MDTypography>
-        </Card>
+            <Grid
+              container
+              sx={{
+                width: "100%",
+                padding: "10px",
+                alignItems: "center",
+                gap: "5rem",
+              }}
+            >
+              <Grid
+                item
+                sx={{
+                  width: {
+                    xs: "100%",
+                    sm: "100%",
+                    md: "100%",
+                  },
+                  display: "flex",
+                  justifyContent: "left",
+                  alignItems: "center",
+                  // border: "1px solid gray",
+                  borderRadius: "10px",
+                  // padding: "1rem",
+                  flexDirection: "column",
+                  gap: "10px",
+                }}
+              >
+                <TextField
+                  label="Date"
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Job"
+                />
+                <TextField
+                  label="JOB"
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Job"
+                />
+
+                <TextField
+                  label="SITE"
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Site"
+                />
+
+                <TextField
+                  label="FORM NO."
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Form no."
+                />
+              </Grid>
+            </Grid>
+          </Card>
+        </Grid>
+        <Grid width="50%" sx={{ width: "100%" }}>
+          <Card
+            style={{
+              marginTop: "1rem",
+              padding: "1rem",
+              boxShadow: "0 0 10px 0 rgba(0,0,0,0.2)",
+            }}
+          >
+            <MDBox mb={4}>
+              <MDTypography variant="h4" color="primary">
+                PPE Guide Lines
+              </MDTypography>
+            </MDBox>
+            <MDTypography variant="subtitle2" color="info">
+              PPE includes shoe cover, gown, mask, eye protection & gloves. Shoe
+              cover should always be worn before entering the patient care area
+              (Isolation ward etc.). If gowns are not fluid resistant, use a
+              waterproof apron for procedures with expected high fluid volumes
+              that might penetrate the gown.
+            </MDTypography>
+          </Card>
+        </Grid>
       </Grid>
       <Card
         sx={{
@@ -344,7 +352,7 @@ const PPE = () => {
                 </MDButton>
               </MDBox>
               <MDButton width="100%" variant="gradient" color="success">
-                <Icon>done</Icon> &nbsp; Click here to mark all PPE Good
+                <Icon>done</Icon> &nbsp; Click here to mark all PPE checked Good
               </MDButton>
             </Box>
           </Grid>
