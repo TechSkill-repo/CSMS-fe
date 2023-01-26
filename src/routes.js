@@ -77,6 +77,10 @@ import TBTForm from "pages/Executive/Job/TBT";
 import profilePicture from "assets/images/team-3.jpg";
 import EmployeeEntry from "pages/Executive/Job/EmployeeEntry";
 import PPE from "pages/Executive/Job/PPE";
+import ToolsTackles from "pages/Executive/Job/TAT/ToolsTackles";
+import Attendance from "pages/Executive/Attendance/Attendance";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord";
 
 const routes = [
   {
@@ -120,16 +124,43 @@ const routes = [
     component: <PPE></PPE>,
     name: "PPE Checklist",
     key: "PPE Checklist",
-    icon: <Icon fontSize="medium">health_and_safety</Icon>,
+    icon: <EngineeringIcon />,
   },
   {
     noCollapse: true,
     route: "/tools-and-tackles",
     type: "collapse",
-    component: <EmployeeEntry></EmployeeEntry>,
+    component: <ToolsTackles />,
     name: "Tools & Tackles",
     key: "Tools & Tackles",
     icon: <Icon fontSize="medium">construction</Icon>,
+  },
+  {
+    noCollapse: true,
+    route: "/attendance",
+    type: "collapse",
+    component: <Attendance />,
+    name: "Attendance",
+    key: "attendance",
+    icon: <Icon fontSize="medium">man</Icon>,
+  },
+  {
+    noCollapse: true,
+    route: "/attendance-record",
+    type: "collapse",
+    component: <AttendanceRecord />,
+    name: "Attendance Record",
+    key: "attendance-record",
+    icon: <Icon fontSize="medium">book</Icon>,
+  },
+  {
+    noCollapse: true,
+    route: "/fsgr",
+    type: "collapse",
+    component: <AttendanceRecord />,
+    name: "FSGR",
+    key: "fsgr",
+    icon: <Icon fontSize="medium">health_and_safety</Icon>,
   },
   {
     route: "/tbt-form-fillup",
