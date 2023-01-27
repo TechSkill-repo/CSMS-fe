@@ -232,6 +232,11 @@ function Misc() {
         sx={{
           display: "flex",
           width: "100%",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+          },
         }}
       >
         <Grid
