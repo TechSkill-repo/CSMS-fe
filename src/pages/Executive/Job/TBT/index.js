@@ -23,6 +23,7 @@ import ViewPdf from "./components/ViewPdf";
 import Socials from "layouts/ecommerce/products/new-product/components/Socials";
 import Pricing from "layouts/ecommerce/products/new-product/components/Pricing";
 import Misc from "./components/Misc";
+import FinalStep from "./components/FinalStep";
 
 function getSteps() {
   return ["1", "2", "3", "4"];
@@ -36,6 +37,8 @@ function getStepContent(stepIndex) {
       return <ViewPdf />;
     case 2:
       return <Misc />;
+    case 3:
+      return <FinalStep />;
 
     default:
       return null;
@@ -46,6 +49,7 @@ function NewProduct() {
   const [activeStep, setActiveStep] = useState(0);
   const steps = getSteps();
   const isLastStep = activeStep === steps.length - 1;
+  const isSecondLastStep = activeStep === steps.length - 2;
 
   const handleNext = () => setActiveStep(activeStep + 1);
   const handleBack = () => setActiveStep(activeStep - 1);
@@ -55,7 +59,7 @@ function NewProduct() {
       <DashboardNavbar />
       <MDBox mt={5} mb={9}>
         <Grid container justifyContent="center">
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={12} lg={isLastStep ? 10 : 8}>
             <Card>
               <MDBox mt={-3} mb={3} mx={2}>
                 <Stepper activeStep={activeStep} alternativeLabel>
@@ -91,7 +95,11 @@ function NewProduct() {
                       color="dark"
                       onClick={!isLastStep ? handleNext : undefined}
                     >
-                      {isLastStep ? "review & submit" : "next"}
+                      {isSecondLastStep
+                        ? "review & submit"
+                        : isLastStep
+                        ? "submit"
+                        : "next"}
                     </MDButton>
                   </MDBox>
                 </MDBox>
