@@ -99,7 +99,7 @@ function Misc() {
                 justifyContent="center"
                 key={index.toString()}
               >
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={10}>
                   <FormControl
                     variant="standard"
                     fullWidth
@@ -332,13 +332,13 @@ function Misc() {
                 }}
               >
                 <MenuItem key={1} value={"Coke"}>
-                  PPE
+                  Name 1
                 </MenuItem>
                 <MenuItem key={2} value={"Rmm"}>
-                  HouseKeeping
+                  Name 2
                 </MenuItem>
                 <MenuItem key={2} value={"Rmm"}>
-                  Tools and tackles
+                  Name 3
                 </MenuItem>
               </Select>
             </FormControl>
@@ -373,13 +373,13 @@ function Misc() {
                 }}
               >
                 <MenuItem key={1} value={"Coke"}>
-                  PPE
+                  Name 1
                 </MenuItem>
                 <MenuItem key={2} value={"Rmm"}>
-                  HouseKeeping
+                  Name 2
                 </MenuItem>
                 <MenuItem key={2} value={"Rmm"}>
-                  Tools and tackles
+                  Name 3
                 </MenuItem>
               </Select>
             </FormControl>

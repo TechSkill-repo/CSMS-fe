@@ -18,10 +18,10 @@ import MenuItem from "@mui/material/MenuItem/MenuItem";
 import Select from "@mui/material/Select/Select";
 import InputLabel from "@mui/material/InputLabel/InputLabel";
 import FormControl from "@mui/material/FormControl/FormControl";
-import Details from "./Details";
-import { Icon, IconButton, Stack } from "@mui/material";
+import { Icon, IconButton } from "@mui/material";
+import { Stack } from "@mui/system";
 
-const PPE = () => {
+function ToolsTackles() {
   const [items, setItems] = useState([1]);
 
   const handleAddClick = (complaint) => {
@@ -30,15 +30,6 @@ const PPE = () => {
   const handleRemoveClick = (complaint) => {
     setItems((prev) => prev.slice(0, prev.length - 1));
   };
-
-  const details = [
-    { name: "Name", value: "Richard Davis" },
-    { name: "Safety Pass No.", value: "9018273EE" },
-    { name: "Employee Id", value: "123456" },
-    { name: "Employee Designation", value: "Employee" },
-    { name: "Contact", value: "1234567890" },
-    { name: "Address", value: "123, Street, City, State, Country" },
-  ];
 
   return (
     <DashboardLayout>
@@ -58,7 +49,7 @@ const PPE = () => {
                 margin: "1rem",
               }}
             >
-              Daily PPE's Checklist
+              Daily Tools and Tackles checklist
             </MDTypography>
             <Grid
               container
@@ -94,17 +85,10 @@ const PPE = () => {
                   placeholder="Job"
                 />
                 <TextField
-                  label="JOB"
+                  label="WORK ORDER Number"
                   variant="outlined"
                   fullWidth
-                  placeholder="Job"
-                />
-
-                <TextField
-                  label="SITE"
-                  variant="outlined"
-                  fullWidth
-                  placeholder="Site"
+                  placeholder="WORK ORDER Number"
                 />
 
                 <TextField
@@ -127,7 +111,7 @@ const PPE = () => {
           >
             <MDBox mb={4}>
               <MDTypography variant="h4" color="primary">
-                PPE Guide Lines
+                Tools and Tackles Guide Lines
               </MDTypography>
             </MDBox>
             <MDTypography variant="subtitle2" color="info">
@@ -148,7 +132,7 @@ const PPE = () => {
         }}
       >
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6.5} lg={6.5}>
+          <Grid item xs={12} md={12} lg={12}>
             <MDTypography
               variant="body1"
               sx={{
@@ -166,48 +150,6 @@ const PPE = () => {
                 gap: "10px",
               }}
             >
-              <Grid item xs={12} md={12}>
-                <FormControl
-                  variant="standard"
-                  fullWidth
-                  sx={{ textAlign: "left" }}
-                  required
-                >
-                  <InputLabel id="demo-simple-select-label">
-                    Employee ID
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Location"
-                    // onChange={handleInput}
-                    name="location"
-                    py={2}
-                    SelectDisplayProps={{
-                      style: {
-                        paddingTop: "8px",
-                        paddingBottom: "8px",
-                        paddingLeft: 0,
-                      },
-                    }}
-                    sx={{
-                      height: "30px",
-                      //  textAlign:"left"
-                    }}
-                  >
-                    <MenuItem key={1} value={"Coke"}>
-                      1234
-                    </MenuItem>
-                    <MenuItem key={2} value={"Rmm"}>
-                      2345432
-                    </MenuItem>
-                    <MenuItem key={2} value={"Rmm"}>
-                      1234
-                    </MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-
               {items.map((item, index) => {
                 return (
                   <Grid
@@ -217,7 +159,7 @@ const PPE = () => {
                     justifyContent="center"
                     key={index.toString()}
                   >
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={3}>
                       <FormControl
                         variant="standard"
                         fullWidth
@@ -225,7 +167,7 @@ const PPE = () => {
                         required
                       >
                         <InputLabel id="demo-simple-select-label">
-                          PPE Equipments
+                          Material Name
                         </InputLabel>
                         <Select
                           labelId="demo-simple-select-label"
@@ -273,8 +215,49 @@ const PPE = () => {
                         </Select>
                       </FormControl>
                     </Grid>
+                    <Grid item xs={12} md={3}>
+                      <FormControl
+                        variant="standard"
+                        fullWidth
+                        sx={{ textAlign: "left" }}
+                        required
+                      >
+                        <InputLabel id="demo-simple-select-label">
+                          Material Make/Id No.
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          label="Location"
+                          // onChange={handleInput}
+                          name="location"
+                          py={2}
+                          SelectDisplayProps={{
+                            style: {
+                              paddingTop: "8px",
+                              paddingBottom: "8px",
+                              paddingLeft: 0,
+                            },
+                          }}
+                          sx={{
+                            height: "30px",
+                            //  textAlign:"left"
+                          }}
+                        >
+                          <MenuItem key={1} value={"Coke"}>
+                            Good
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Partially Good
+                          </MenuItem>
+                          <MenuItem key={2} value={"Rmm"}>
+                            Bad
+                          </MenuItem>
+                        </Select>
+                      </FormControl>
+                    </Grid>
 
-                    <Grid item xs={12} md={6}>
+                    <Grid item xs={12} md={3}>
                       <FormControl
                         variant="standard"
                         fullWidth
@@ -316,21 +299,14 @@ const PPE = () => {
                       </FormControl>
                     </Grid>
 
-                    <Grid
-                      mt={4}
-                      ml={0}
-                      pl={3}
-                      sx={{ ml: "20%" }}
-                      xs={12}
-                      md={4}
-                    >
+                    <Grid p={5} xs={12} md={3}>
                       <Stack direction="row" alignItems="center" spacing={5}>
                         <Button
                           variant="contained"
                           style={{
                             backgroundColor: "#f44335",
                             color: "#f0f2f5",
-                            width: "100px",
+                            width: "200px",
                           }}
                           component="label"
                         >
@@ -338,11 +314,7 @@ const PPE = () => {
                           <input hidden accept="image/*" multiple type="file" />
                         </Button>
                         <IconButton
-                          style={{
-                            color: "#495361",
-                            fontSize: "30px",
-                            width: "20%",
-                          }}
+                          style={{ color: "#495361", fontSize: "40px" }}
                           aria-label="upload picture"
                           component="label"
                         >
@@ -388,18 +360,14 @@ const PPE = () => {
                 </MDButton>
               </MDBox>
               <MDButton width="100%" variant="gradient" color="success">
-                <Icon>done</Icon> &nbsp; Click here to mark all PPE checked Good
+                <Icon>done</Icon> &nbsp; Click here to mark all T&T checked Good
               </MDButton>
             </Box>
-          </Grid>
-
-          <Grid item xs={12} md={5} lg={5}>
-            <Details details={details}></Details>
           </Grid>
         </Grid>
       </Card>
     </DashboardLayout>
   );
-};
+}
 
-export default PPE;
+export default ToolsTackles;

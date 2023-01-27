@@ -128,10 +128,10 @@ function Form() {
         <MDButton
           disabled={workOrder.length < 5}
           variant="gradient"
-          color="dark"
+          color="success"
           onClick={handleNext}
         >
-          <Icon>done</Icon>&nbsp; Next
+          <Icon>done</Icon>&nbsp; Submit
         </MDButton>
       </MDBox>
     </Grid>

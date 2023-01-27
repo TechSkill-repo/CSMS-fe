@@ -20,7 +20,7 @@ function HomePage() {
           display="flex"
           alignItems="center"
           position="relative"
-          minHeight="10.75rem"
+          minHeight="12.75rem"
           minWeight="100%"
           borderRadius="xl"
           sx={{
