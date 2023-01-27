@@ -66,6 +66,8 @@ import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
 import HomePage from "pages/Executive/HomePage";
 
+import TbtDetails from "pages/SafetyOfficer/Tbt_Details";
+
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
 
@@ -75,14 +77,18 @@ import TBTForm from "pages/Executive/Job/TBT";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
+
+import pfp from "assets/images/team-5.jpg";
+
 import EmployeeEntry from "pages/Executive/Job/EmployeeEntry";
 import PPE from "pages/Executive/Job/PPE";
 import ToolsTackles from "pages/Executive/Job/TAT/ToolsTackles";
 import Attendance from "pages/Executive/Attendance/Attendance";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord";
+import ViewMore from "pages/SafetyOfficer/Tbt_Details/ViewMore";
 
-const routes = [
+const supervisor_routes = [
   {
     type: "collapse",
     name: "Supervisor",
@@ -171,5 +177,52 @@ const routes = [
     icon: <Icon fontSize="medium">apps</Icon>,
   },
 ];
+
+const safety_officer_routes = [
+  {
+    type: "collapse",
+    name: "Safety Officer",
+    key: "brooklyn-alice",
+    icon: <MDAvatar src={pfp} alt="Brooklyn Alice" size="sm" />,
+    collapse: [
+      {
+        name: "Logout",
+        key: "logout",
+        route: "/authentication/sign-in/basic",
+        component: <SignInBasic />,
+      },
+    ],
+  },
+  { type: "divider", key: "divider-0" },
+  {
+    noCollapse: true,
+    route: "/home",
+    type: "collapse",
+    component: <HomePage></HomePage>,
+    name: "Home",
+    key: "home",
+    icon: <Icon fontSize="medium">dashboard</Icon>,
+  },
+
+  {
+    noCollapse: true,
+    route: "/tbt-details",
+    type: "collapse",
+    component: <TbtDetails></TbtDetails>,
+    name: "TBT Details",
+    key: "TBT Details",
+    icon: <Icon fontSize="medium">dashboard</Icon>,
+  },
+
+  {
+    route: "/tbt-details/view-more",
+
+    component: <ViewMore></ViewMore>,
+    name: "More Details",
+    key: "More Details",
+    icon: <Icon fontSize="medium">apps</Icon>,
+  },
+];
+const routes = safety_officer_routes;
 
 export default routes;
