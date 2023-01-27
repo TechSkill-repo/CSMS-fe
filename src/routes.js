@@ -81,6 +81,7 @@ import ToolsTackles from "pages/Executive/Job/TAT/ToolsTackles";
 import Attendance from "pages/Executive/Attendance/Attendance";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord";
+import FSGR from "./pages/Executive/FSGR/FSGR";
 
 const routes = [
   {
@@ -157,7 +158,7 @@ const routes = [
     noCollapse: true,
     route: "/fsgr",
     type: "collapse",
-    component: <AttendanceRecord />,
+    component: <FSGR />,
     name: "FSGR",
     key: "fsgr",
     icon: <Icon fontSize="medium">health_and_safety</Icon>,
