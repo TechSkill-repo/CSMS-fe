@@ -83,6 +83,9 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord";
 import FSGR from "./pages/Executive/FSGR/FSGR";
 
+import { AiFillSafetyCertificate } from "react-icons/ai";
+import InitialInvestigation from "layouts/FSGR/InitialInvestigation/InitialInvestigation";
+
 const routes = [
   {
     type: "collapse",
@@ -113,19 +116,19 @@ const routes = [
     route: "/tbt-form",
     type: "collapse",
     component: <EmployeeEntry></EmployeeEntry>,
-    name: "TBT - Form",
+    name: "TBT - Details",
     key: "TBT - Form",
-    icon: <Icon fontSize="medium">apps</Icon>,
+    icon: <EngineeringIcon />,
   },
 
   {
     noCollapse: true,
     route: "/ppe-checklist",
     type: "collapse",
-    component: <PPE></PPE>,
-    name: "PPE Checklist",
+    component: <InitialInvestigation />,
+    name: "FSGR Report Creation",
     key: "PPE Checklist",
-    icon: <EngineeringIcon />,
+    icon: <AiFillSafetyCertificate />,
   },
   {
     noCollapse: true,
