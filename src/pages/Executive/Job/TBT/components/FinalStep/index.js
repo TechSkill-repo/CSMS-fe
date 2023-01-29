@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "assets/logo.jpeg";
+// import logo from "assets/logo.jpeg";
 import { Box, Grid, Typography } from "@mui/material";
 import MDTypography from "components/MDTypography";
 
@@ -8,11 +8,11 @@ const FinalStep = () => {
     date: "12/12/2021",
     time: "12:00",
     location: "Jamshedpur",
-    department: "S.H. Constructions & Co",
-    safety: "S.H. Constructions & Co",
-    supervisor: "S.H. Constructions & Co",
-    constractor: "S.H. Constructions & Co",
-    employees: "S.H. Constructions & Co",
+    department: "TechPedia ",
+    safety: "TechPedia ",
+    supervisor: "TechPedia ",
+    constractor: "TechPedia ",
+    employees: "TechPedia ",
     long: "ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic",
   };
 
@@ -35,7 +35,11 @@ const FinalStep = () => {
         }}
       >
         <Grid item xs={3}>
-          <img src={logo} alt="" />
+          <img
+            src="https://cdn.logo.com/hotlink-ok/logo-social.png"
+            alt=""
+            height="50px"
+          />
         </Grid>
         <Grid
           item
@@ -46,7 +50,7 @@ const FinalStep = () => {
             textAlign: "center",
           }}
         >
-          <Typography variant="h4">S.H. Constructions & Co</Typography>
+          <Typography variant="h4">TechPedia </Typography>
           <Typography variant="h6">JAMSHEDPUR</Typography>
           <Typography
             variant="h6"

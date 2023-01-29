@@ -87,6 +87,9 @@ import Attendance from "pages/Executive/Attendance/Attendance";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord";
 import ViewMore from "pages/SafetyOfficer/Tbt_Details/ViewMore";
+import FSGR from "pages/FSGR/FSGR";
+
+import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 
 const supervisor_routes = [
   {
@@ -159,15 +162,15 @@ const supervisor_routes = [
     key: "attendance-record",
     icon: <Icon fontSize="medium">book</Icon>,
   },
-  {
-    noCollapse: true,
-    route: "/fsgr",
-    type: "collapse",
-    component: <AttendanceRecord />,
-    name: "FSGR",
-    key: "fsgr",
-    icon: <Icon fontSize="medium">health_and_safety</Icon>,
-  },
+  // {
+  //   noCollapse: true,
+  //   route: "/fsgr",
+  //   type: "collapse",
+  //   component: <AttendanceRecord />,
+  //   name: "FSGR",
+  //   key: "fsgr",
+  //   icon: <Icon fontSize="medium">health_and_safety</Icon>,
+  // },
   {
     route: "/tbt-form-fillup",
 
@@ -212,6 +215,33 @@ const safety_officer_routes = [
     name: "TBT Details",
     key: "TBT Details",
     icon: <Icon fontSize="medium">dashboard</Icon>,
+  },
+
+  {
+    type: "collapse",
+    name: "FSGR report Creation",
+    key: "brooklyn",
+    icon: <HealthAndSafetyIcon />,
+    collapse: [
+      {
+        name: "Initial Investigation",
+        key: "fsgr",
+        route: "/initial-report",
+        component: <FSGR />,
+      },
+      {
+        name: "RESOURCE PLANNING",
+        key: "fsgr",
+        route: "/RESOURCE-PLANNING",
+        component: <FSGR />,
+      },
+      {
+        name: "Final Report",
+        key: "fsgr",
+        route: "/RESOURCE-PLANNING",
+        component: <FSGR />,
+      },
+    ],
   },
 
   {
