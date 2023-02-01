@@ -84,7 +84,7 @@ import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord"
 import FSGR from "./pages/Executive/FSGR/FSGR";
 
 import { AiFillSafetyCertificate } from "react-icons/ai";
-import InitialInvestigation from "layouts/FSGR/InitialInvestigation/InitialInvestigation";
+import InitialInvestigation from "./pages/Executive/FSGR/InitialInvestigation";
 
 const routes = [
   {
