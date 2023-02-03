@@ -83,10 +83,15 @@ import EngineeringIcon from "@mui/icons-material/Engineering";
 import AttendanceRecord from "pages/Executive/AttendanceRecord/AttendanceRecord";
 import FSGR from "./pages/Executive/FSGR/FSGR";
 
+import pfp from "assets/images/team-4.jpg";
+
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import InitialInvestigation from "./pages/Executive/FSGR/InitialInvestigation";
 
-const routes = [
+import ViewMore from "pages/SafetyOfficer/Tbt_Details/ViewMore";
+import TbtDetails from "pages/SafetyOfficer/Tbt_Details/";
+
+const supervisor_routes = [
   {
     type: "collapse",
     name: "Supervisor",
@@ -116,19 +121,19 @@ const routes = [
     route: "/tbt-form",
     type: "collapse",
     component: <EmployeeEntry></EmployeeEntry>,
-    name: "TBT - Details",
+    name: "TBT - Form",
     key: "TBT - Form",
-    icon: <EngineeringIcon />,
+    icon: <Icon fontSize="medium">apps</Icon>,
   },
 
   {
     noCollapse: true,
     route: "/ppe-checklist",
     type: "collapse",
-    component: <InitialInvestigation />,
-    name: "FSGR Report Creation",
+    component: <PPE></PPE>,
+    name: "PPE Checklist",
     key: "PPE Checklist",
-    icon: <AiFillSafetyCertificate />,
+    icon: <EngineeringIcon />,
   },
   {
     noCollapse: true,
@@ -161,7 +166,7 @@ const routes = [
     noCollapse: true,
     route: "/fsgr",
     type: "collapse",
-    component: <FSGR />,
+    component: <AttendanceRecord />,
     name: "FSGR",
     key: "fsgr",
     icon: <Icon fontSize="medium">health_and_safety</Icon>,
@@ -175,5 +180,89 @@ const routes = [
     icon: <Icon fontSize="medium">apps</Icon>,
   },
 ];
+
+const safety_officer_routes = [
+  {
+    type: "collapse",
+    name: "Safety Officer",
+    key: "brooklyn-alice",
+    icon: <MDAvatar src={pfp} alt="Brooklyn Alice" size="sm" />,
+    collapse: [
+      {
+        name: "Logout",
+        key: "logout",
+        route: "/authentication/sign-in/basic",
+        component: <SignInBasic />,
+      },
+    ],
+  },
+  { type: "divider", key: "divider-0" },
+  {
+    noCollapse: true,
+    route: "/home",
+    type: "collapse",
+    component: <HomePage></HomePage>,
+    name: "Home",
+    key: "home",
+    icon: <Icon fontSize="medium">dashboard</Icon>,
+  },
+
+  {
+    noCollapse: true,
+    route: "/tbt-details",
+    type: "collapse",
+    component: <TbtDetails></TbtDetails>,
+    name: "TBT Details",
+    key: "TBT Details",
+    icon: <Icon fontSize="medium">dashboard</Icon>,
+  },
+  {
+    noCollapse: true,
+    route: "/ppe-checklist",
+    type: "collapse",
+    component: <InitialInvestigation />,
+    name: "FSGR Report Creation",
+    key: "FSGR Report Creation",
+    icon: <AiFillSafetyCertificate />,
+  },
+  {
+    noCollapse: true,
+    route: "/fsgr",
+    type: "collapse",
+    component: <FSGR />,
+    name: "FSGR",
+    key: "fsgr",
+    icon: <Icon fontSize="medium">health_and_safety</Icon>,
+  },
+
+  {
+    route: "/tbt-details/view-more",
+
+    component: <ViewMore></ViewMore>,
+    name: "More Details",
+    key: "More Details",
+    icon: <Icon fontSize="medium">apps</Icon>,
+  },
+  {
+    route: "sign-in/basic",
+
+    component: <SignInBasic></SignInBasic>,
+    name: "More Details",
+    key: "basic",
+    icon: <Icon fontSize="medium">apps</Icon>,
+  },
+  {
+    route: "sign-in/",
+
+    component: <SignInCover></SignInCover>,
+    name: "More Details",
+    key: "cover",
+    icon: <Icon fontSize="medium">apps</Icon>,
+  },
+];
+
+const routes = safety_officer_routes;
+
+// const routes = supervisor_routes;
 
 export default routes;
